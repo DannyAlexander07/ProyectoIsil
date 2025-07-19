@@ -1,0 +1,130 @@
+/* --- Estilos Globales y Comunes (Igual que en Inicio) --- */
+:root {
+    --dark-gray: #333333;
+    --medium-gray: #5a5a5a;
+    --light-gray-bg: #f0f0f0;
+    --border-gray: #e0e0e0;
+    --main-red: #d9232d;
+    --text-color: #333333;
+    --font-primary: 'Helvetica', 'Arial', sans-serif;
+}
+body { font-family: var(--font-primary); margin: 0; background-color: #ffffff; color: var(--text-color); }
+.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background-color: #f8f8f8; border-bottom: 1px solid var(--border-gray); }
+.main-header nav { display: flex; gap: 20px; }
+.main-header nav a { text-decoration: none; color: var(--medium-gray); font-size: 0.8rem; font-weight: bold; }
+.logo a { text-decoration: none; color: var(--dark-gray); font-size: 2rem; font-weight: bold; }
+.logo span { color: var(--main-red); }
+.page-title-bar { background-color: var(--medium-gray); color: white; text-align: center; padding: 10px 0; }
+.page-title-bar h1 { margin: 0; font-size: 1.2rem; font-weight: bold; letter-spacing: 2px; }
+.main-footer { padding: 20px 0; background-color: var(--light-gray-bg); }
+.subscribe-bar { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; }
+.subscribe-bar label { font-weight: bold; }
+.subscribe-bar input { padding: 8px; border: 1px solid #ccc; width: 250px; }
+.subscribe-bar button { padding: 8px 15px; background-color: var(--dark-gray); color: white; border: none; cursor: pointer; }
+.footer-dots { text-align: center; }
+.footer-dots span { display: inline-block; width: 10px; height: 10px; background-color: var(--dark-gray); border-radius: 50%; margin: 0 5px; }
+
+
+/* --- Contenido Específico: NOSOTROS --- */
+.about-section, .vision-section {
+    padding: 40px 0;
+}
+
+.about-section h2, .vision-section h2, .mission-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.about-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--main-red);
+    margin: 10px auto 0;
+}
+
+.content-block-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.split-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.split-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.split-text .quote {
+    font-size: 4rem;
+    color: var(--border-gray);
+    line-height: 0.5;
+    margin: 0;
+}
+.split-text .quote-end {
+    font-size: 4rem;
+    color: var(--border-gray);
+    line-height: 0.5;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.vision-section {
+    background-color: var(--light-gray-bg);
+    margin: 40px 0;
+    padding: 40px 0;
+}
+.vision-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.vision-gallery img {
+    width: 100%;
+    height: 11rem;
+    display: block;
+}
+
+
+
+.mission-section {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/Perfil-profesional-de-un-periodista.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+.mission-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.mission-section h2 {
+    font-size: 2rem;
+}
+.mission-section p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .main-header { flex-direction: column; gap: 15px; }
+    .container { padding: 15px; }
+    .content-block-split { grid-template-columns: 1fr; }
+    .vision-gallery { grid-template-columns: 1fr; }
+}
+@media (max-width: 576px) {
+    .main-header nav { flex-direction: column; text-align: center; gap: 10px; }
+    .secondary-nav { order: 3; } .logo { order: 1; } .main-nav { order: 2; }
+    .subscribe-bar { flex-direction: column; gap: 10px; }
+    .subscribe-bar input { width: 80%; }
+    .mission-section { padding: 60px 20px; }
+}
